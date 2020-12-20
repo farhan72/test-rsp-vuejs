@@ -1,9 +1,9 @@
-import axios from "axios";
+import {mockIO} from "../baseAPI";
 
 
-const getCategoryList  = () => axios.get("./json/blogs.json");
-const getPopularArticles  = () => axios.get("./json/article-popular.json");
-const getBestArticles = () => axios.get("./json/best-articles.json");
-const getPostData = () => axios.get("./json/post-list.json");
+const getCategoryList  = () => mockIO("blogs");
+const getPopularArticles  = () => mockIO("article-popular");
+const getBestArticles = () => mockIO("featured-articles");
+const getPostData = () => mockIO("post-list");
 
 export {getPopularArticles, getCategoryList, getBestArticles, getPostData};
