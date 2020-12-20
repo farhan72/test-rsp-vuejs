@@ -43,25 +43,7 @@
                   CASE STUDIES
                 </h2>
               </div>
-              <div id="slider">
-                <card-project
-                  class="card rounded bg-white"
-                  v-for="project in projectList"
-                  :key="project.id"
-                >
-                  <card-image :image="project.image">
-                    <card-image-content>
-                      <router-link to="/" :disabled="true">{{
-                        project.productName
-                      }}</router-link>
-                    </card-image-content>
-                  </card-image>
-                  <card-project-body>
-                    <h6 class="card-title mt-2">{{ project.productName }}</h6>
-                    <p class="card-text">{{ project.productDesc }}</p>
-                  </card-project-body>
-                </card-project>
-              </div>
+              <CardCaseStudies :case-studies="projectList"/>
 
               <div class="d-flex justify-content-center bg-none">
                 <button type="button" class="btn-load-more">
@@ -77,37 +59,24 @@
 </template>
 
 <script>
+import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import { WrapperBestArticle } from "../styled-components/wrapper";
 import { getBestArticles, getPostData } from "../api/services/blog.service";
 import BestArticleCarousel from "./carousel/BestArticleCarousel";
-import {
-  CardImage,
-  CardImageContent,
-  CardProject,
-  CardProjectBody,
-} from "../styled-components/projects-card";
+import CardCaseStudies from "./carousel/CardCaseStudies";
 
 export default {
   name: "index",
   components: {
     BestArticleCarousel,
-    "wrapper-best-article": WrapperBestArticle,
-    "card-project": CardProject,
-    "card-image-content": CardImageContent,
-    "card-image": CardImage,
-    "card-project-body": CardProjectBody,
+    CardCaseStudies,
+    "wrapper-best-article": WrapperBestArticle
   },
   data: () => ({
     articles: [],
     postList: [],
-    projectList: [],
-    slickOptions: {
-      perPageCustom: [[767, 1], [768, 3]],
-      autoplayTimeout: 1000,
-      loop: true,
-      paginationEnabled: true,
-      paginationColor: 'red'
-    },
+    projectList: []
   }),
   mounted() {
     this.callAPIBestArticles();

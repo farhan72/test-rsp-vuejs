@@ -1,7 +1,6 @@
 <template>
     <div class="col-md-10 slider" v-if="articles.length > 0">
-        <VueSlickCarousel ref="c2"
-                          :asNavFor="$refs.c1" v-bind="settings">
+        <VueSlickCarousel v-bind="settings">
             <card-article class="px-3" v-for="article in articles" :key="article.id" v-bind:style="{ backgroundImage: 'url(' + article.image + ')' }">
                 <card-content class="card-body">
                     <h3 class="card-text px-3">
@@ -27,8 +26,6 @@
 
 <script>
     import VueSlickCarousel from 'vue-slick-carousel';
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
     import {CardBaseArticle, CardContent} from "../../styled-components/card";
 
     export default {

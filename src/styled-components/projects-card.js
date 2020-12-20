@@ -1,5 +1,7 @@
 import styled from "vue-styled-components";
 
+const cardProps = {image: String};
+
 const CardProject = styled.div`
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 14px;
@@ -20,13 +22,17 @@ const CardImageContent = styled.div`
   animation: overlay 0.5s ease;
   text-transform: uppercase;
 
-  a {
-    color: #fff;
+  button {
+    color: #fff !important;
     font-size: 20px;
-    font-weight: 400;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: underline !important;
       color: #fff;
     }
   }
@@ -41,15 +47,14 @@ const CardImageContent = styled.div`
   }
 `;
 
-const CardImage = styled.div`
-  background-image: url(${({ image }) => image});
+const CardImage = styled('div', cardProps)`
   background-position: center top;
   position: relative;
   height: 140px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 
-  &:hover ${CardImageContent} {
+  &:hover .card-content {
     display: flex;
   }
 
@@ -70,6 +75,7 @@ const CardProjectBody = styled.div`
     font-family: "Montserrat", sans-serif;
     text-align: center;
     font-size: 12px;
+    padding: 0px 15px;
   }
 `;
 
