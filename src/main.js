@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
-import "slick-carousel/slick/slick.css";
+import "bootstrap"
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
+import "bootstrap-vue/dist/bootstrap-vue.min.css";
 import router from './router'
 
 Vue.config.productionTip = false;
