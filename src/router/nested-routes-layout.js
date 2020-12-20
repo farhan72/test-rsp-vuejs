@@ -1,6 +1,6 @@
 import BlogContainer from "../containers/blog";
 
-const nestedRoutes = {
+const blogRoute = {
   path: "/blog",
   name: "blog",
   meta: {
@@ -22,4 +22,20 @@ const nestedRoutes = {
   ],
 };
 
-export default nestedRoutes;
+const postRoute = {
+  path: "/post/:material",
+  name: "post",
+  component: BlogContainer,
+  children: [
+    {
+      path: "",
+      name: "post",
+      components: {
+        default: () => import("../views/Post"),
+        "bottom-component": () => import("../components/Post"),
+      },
+    },
+  ],
+};
+
+export {blogRoute, postRoute}

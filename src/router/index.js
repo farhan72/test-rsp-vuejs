@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Layout from "../containers/Layout";
-import NestedRoutesLayout from "./nested-routes-layout";
+import {blogRoute, postRoute} from "./nested-routes-layout";
 
 Vue.use(VueRouter);
 
@@ -27,7 +27,8 @@ const routes = [
         },
         component: () => import("../views/Courses"),
       },
-      NestedRoutesLayout,
+      blogRoute,
+      postRoute
     ],
   },
 ];
