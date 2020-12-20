@@ -3,8 +3,8 @@
         <div class="col-12"></div>
         <div class="col-12">
             <div class="jumbotron bg-none">
-                <h2 className="title-h2">HUBUNGKAN DENGAN KAMI</h2>
-                <h2 className="heading-title">Ikuti refactory</h2>
+                <h2 class="heading">HUBUNGKAN DENGAN KAMI</h2>
+                <h2 class="heading-title">Ikuti refactory</h2>
                 <div class="list-group">
                     <li v-for="socmed in dataSocmeds" :key="socmed.link">
                         <a :href="socmed.link">
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="jumbotron bg-own-light">
-                <h5 className="text-center title">ARTIKEL POPULER</h5>
+                <h5 class="text-center title">ARTIKEL POPULER</h5>
                 <div class="card" v-for="article in articles" :key="article.id">
                     <div class="inner">
                         <img :src="article.imageUrl" :alt="article.category" class="card-img-top w-100">

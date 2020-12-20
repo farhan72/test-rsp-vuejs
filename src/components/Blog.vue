@@ -3,20 +3,7 @@
     <div class="jumbotron jumbotron-fluid my-0">
       <wrapper-best-article class="text-center">
         <h2>Artikel Unggulan</h2>
-        <card-article
-          class="card"
-          v-for="article in articles"
-          :key="article.id"
-          imageurl="article.image"
-        >
-          <card-content>
-            <h3 class="card-text">
-              <router-link to="/" :disabled="true">{{
-                article.description
-              }}</router-link>
-            </h3>
-          </card-content>
-        </card-article>
+        <BestArticleCarousel :articles="articles"/>
       </wrapper-best-article>
     </div>
     <div class="jumbotron jumbotron-fluid bg-none pb-0 mt-0">
@@ -42,9 +29,7 @@
                     <h2 class="card-title">{{ item.content }}</h2>
                     <p class="card-text text-muted">{{ item.description }}</p>
                     <span>
-                      <router-link to="/" :disabled="true"
-                        >baca artikel</router-link
-                      >
+                      <router-link to="/" :disabled="true">baca artikel</router-link>
                     </span>
                   </div>
                 </div>
@@ -94,7 +79,7 @@
 <script>
 import { WrapperBestArticle } from "../styled-components/wrapper";
 import { getBestArticles, getPostData } from "../api/services/blog.service";
-import { CardBaseArticle, CardContent } from "../styled-components/card";
+import BestArticleCarousel from "./carousel/BestArticleCarousel";
 import {
   CardImage,
   CardImageContent,
@@ -105,9 +90,8 @@ import {
 export default {
   name: "index",
   components: {
+    BestArticleCarousel,
     "wrapper-best-article": WrapperBestArticle,
-    "card-article": CardBaseArticle,
-    "card-content": CardContent,
     "card-project": CardProject,
     "card-image-content": CardImageContent,
     "card-image": CardImage,
@@ -118,24 +102,11 @@ export default {
     postList: [],
     projectList: [],
     slickOptions: {
-      arrows: true,
-      dots: false,
-      infinite: true,
-      speed: 2000,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      pauseOnHover: true,
-      responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-      ],
+      perPageCustom: [[767, 1], [768, 3]],
+      autoplayTimeout: 1000,
+      loop: true,
+      paginationEnabled: true,
+      paginationColor: 'red'
     },
   }),
   mounted() {

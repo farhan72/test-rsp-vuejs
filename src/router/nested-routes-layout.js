@@ -11,6 +11,9 @@ const nestedRoutes = {
     {
       path: "",
       name: "blog",
+      meta: {
+        title: "Blog",
+      },
       components: {
         default: () => import("../views/Blog"),
         "bottom-component": () => import("../components/Blog"),

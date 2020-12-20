@@ -26,6 +26,10 @@ const Button = styled("button", btnProps)`
   padding: 6px 40px;
   width: ${(width) => (width ? width : "auto")};
   ${({ outline }) => changeStyleBtn(outline)};
+  
+  &:focus {
+    outline: none !important;
+  }
 
   &:hover {
     transition: 0.5s;

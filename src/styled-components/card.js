@@ -28,6 +28,7 @@ const CardContent = styled.div`
     color: #fff;
     display: inline;
     transition: all 1s ease;
+    font-size: 16px;
 
     &:hover {
       text-decoration: underline;
@@ -43,10 +44,15 @@ const CardContent = styled.div`
       opacity: 1;
     }
   }
+  
+  @media only screen and (max-width: 768px) {
+    a {
+      font-size: 18px;
+    }
+  }
 `;
 
 const CardBaseArticle = styled.div`
-  background-image: url(${({ imageurl }) => imageurl});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,7 +61,7 @@ const CardBaseArticle = styled.div`
   border-radius: 12px;
   overflow: hidden;
 
-  &:hover ${CardContent} {
+  &:hover .card-body {
     display: flex;
   }
 `;
