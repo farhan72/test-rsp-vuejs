@@ -25,6 +25,10 @@ body {
   background-color: transparent !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .col-ipad-12 {
     max-width: 100%;

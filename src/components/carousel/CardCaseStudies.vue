@@ -11,7 +11,7 @@
                         </card-image-content>
                     </card-image>
                     <card-project-body>
-                        <h6 class="card-title mt-2">{{ project.productName }}</h6>
+                        <h6 class="card-title mt-2 cursor-pointer">{{ project.productName }}</h6>
                         <p class="card-text">{{ project.productDesc }}</p>
                     </card-project-body>
                 </card-project>
