@@ -127,19 +127,17 @@ h2.card-title {
   color: #ffa41b;
 }
 
-.button-link a {
+.button-link {
+  outline: none;
   font-weight: 600;
-  fill: #e48800;
   color: #e48800;
-  background-color: rgba(255, 255, 255, 0);
-  border-style: solid;
-  border-width: 1px 1px 1px 1px;
-  border-color: #e48800;
-  border-radius: 20px 20px 20px 20px;
-  padding: 10px 40px;
+  background-color: transparent;
+  border: 1px solid #e48800;
+  border-radius: 20px;
+  padding: 6px 40px;
 }
 
-.button-link a:hover {
+.button-link:hover {
   transition: all 0.5s ease;
   background-color: #e48800;
   color: #ffffff;

@@ -27,6 +27,11 @@
                         <a href="javascript:void(0)">baca artikel</a>
                     </div>
                 </div>
+                <div class="text-center">
+                    <button class="button-link text-center">
+                        Artikel Lain <i class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
