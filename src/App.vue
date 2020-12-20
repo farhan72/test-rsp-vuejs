@@ -29,6 +29,21 @@ body {
   cursor: pointer;
 }
 
+h5.w-40px {
+  width: 40px;
+  font-size: 14px;
+}
+h5.w-200px {
+  width: 200px;
+  font-size: 14px;
+  font-size: 14px;
+}
+h5.w-20px {
+  width: 20px;
+  font-size: 14px;
+}
+
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .col-ipad-12 {
     max-width: 100%;

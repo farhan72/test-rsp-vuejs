@@ -29,7 +29,9 @@ const NavBlogsBrand = styled.span`
   }
 `;
 
-const NavBlogsMenu = styled.div`
+const navbarProps =  {open: Boolean};
+
+const NavBlogsMenu = styled('div', navbarProps)`
   background-color: #005978;
   display: flex;
 

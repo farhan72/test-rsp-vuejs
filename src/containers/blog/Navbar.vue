@@ -13,7 +13,7 @@
               </navblogs-link>
               <navblogs-link
                 href="javascript:void(0)"
-                v-bind:class="currentPage('/blog')"
+                v-bind:class="currentPage('blog')"
               >
                 <router-link to="/blog">Blog</router-link>
               </navblogs-link>
@@ -69,7 +69,7 @@ export default {
       this.isOpenMenu = !this.isOpenMenu;
     },
     currentPage(page) {
-      return this.$route.path == page ? "menu-active" : "";
+      return this.$route.path.includes(page) ? "menu-active" : "";
     },
   },
 };
