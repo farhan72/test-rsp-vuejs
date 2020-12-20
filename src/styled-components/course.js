@@ -2,9 +2,22 @@ import styled from "vue-styled-components";
 
 const CourseProgramming = styled.div`
   font-family: "Raleway", sans-serif;
-
+  
+  .context {
+    padding-left: 0;
+    padding-bottom: 50px;
+  }
+  
+  .context-image {
+    padding-left: 0;
+    margin: 0;
+    img {
+     width: 300px;
+    }
+  }
   @media only screen and (min-width: 768px) {
     .context {
+      padding-left: 4rem;
       padding-top: 100px;
       h2 {
         font-size: 26px;
@@ -14,6 +27,7 @@ const CourseProgramming = styled.div`
 
       p {
         line-height: 25px;
+        font-size: 14px;
       }
 
       p:not(:first-child) {
@@ -22,10 +36,11 @@ const CourseProgramming = styled.div`
     }
 
     .context-image {
-      img {
-        height: 550px;
-        width: 550px;
-      }
+        text-align: end;
+        img {
+          height: 550px;
+          width: 550px;
+        }
     }
   }
 `;

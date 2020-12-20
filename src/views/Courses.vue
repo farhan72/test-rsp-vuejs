@@ -14,7 +14,7 @@
         </tag-button>
       </button-wrapper>
     </HeroImage>
-    <courses-jumbotron class="jumbotron mb-0" :transparent="true">
+    <courses-jumbotron class="jumbotron mb-0" transparent>
       <div class="container">
         <div class="row pl-5 justify-content-center pr-0 align-items-center">
           <div class="col-md-6 col-sm-12 learn-more">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </courses-jumbotron>
-    <courses-jumbotron class="pl-0">
+    <courses-jumbotron class="pl-5">
       <programming class="row">
         <div class="col context pb-sm-4 pt-sm-5">
           <h2>Kursus pemrograman untuk semua orang tanpa terkecuali</h2>
@@ -65,8 +65,8 @@
           </p>
           <tag-button>Daftar Sekarang</tag-button>
         </div>
-        <div class="col-sm-12 col-md-6">
-          <div className="context-image text-right">
+        <div class="col col-sm-12 col-md-6 context-image">
+          <div>
             <img
               src="https://i1.wp.com/refactory.id/wp-content/uploads/2020/01/IMG_1152-1.jpg?fit=690%2C800&ssl=1"
               loading="lazy"
@@ -146,7 +146,7 @@ export default {
     "button-wrapper": ButtonWrapper,
     "tag-button": Button,
     "courses-jumbotron": CoursesJumbotron,
-    programming: CourseProgramming,
+    "programming": CourseProgramming,
     "start-learning": JumbotronStartLearning,
     "learn-more": LearnMore,
   },

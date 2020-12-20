@@ -1,6 +1,7 @@
 import styled from "vue-styled-components";
 
 const homeProps = { transparent: Boolean, showbgimage: Boolean };
+const propsJumbotron = {transparent: Boolean};
 
 const bgImage = (show) => {
   if (show) {
@@ -15,13 +16,7 @@ const bgImage = (show) => {
 
 const HomeJumbotron = styled("div", homeProps)`
   margin-bottom: 0 !important;
-  background-color: ${({ transparent }) => {
-    if (transparent == true) {
-      return "transparent !important";
-    } else {
-      return "#F4F5F6 !important";
-    }
-  }};
+  background-color: ${(props) => props.transparent ? 'transparent !important' : '#F4F5F6 !important'};
   & .jumbotron {
     h1,
     h2 {
@@ -40,18 +35,12 @@ const HomeJumbotron = styled("div", homeProps)`
     text-decoration: none;
     color: #e48800;
   }
-  ${({ showbgimage }) => bgImage(showbgimage)}
+  ${(props) => bgImage(props.showbgimage)}
 `;
 
-const CoursesJumbotron = styled.div`
+const CoursesJumbotron = styled('div', propsJumbotron)`
   position: relative;
-  background-color: ${({ transparent }) => {
-    if (transparent == true) {
-      return "transparent";
-    } else {
-      return "#F4F5F6";
-    }
-  }};
+  background-color: ${({transparent}) => transparent ? 'transparent' : '#F4F5F6'};
   font-family: "Raleway", sans-serif;
 
   .side-title {
@@ -84,6 +73,10 @@ const CoursesJumbotron = styled.div`
 
   .report {
     font-size: 24px;
+  }
+  
+  img {
+    width: 100%;
   }
 
   @media only screen and (min-width: 768px) {
